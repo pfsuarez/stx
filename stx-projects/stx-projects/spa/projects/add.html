@@ -1,0 +1,48 @@
+﻿<div ng-controller="projectAddCtrl">
+    <h1>Agregar Projecto</h1>
+
+    <form name="formulario" ng-submit="AddProject()">
+        <div>
+            <label>Projecto</label>
+            <input type="text" name="name"
+                   ng-model="project.name"
+                   ng-minlength="4"
+                   ng-maxlength="50"
+                   required>
+        </div>
+        <div ng-messages="formulario.name.$error" ng-if="formulario.name.$touched">
+            <!--<div ng-messages-include="mensajes.html"></div>-->
+            <p ng-message="minlength" class="label label-danger">Este campo es muy corto</p>
+            <p ng-message="maxlength" class="label label-danger">Este campo es muy largo</p>
+            <p ng-message="required" class="label label-danger">Este campo es requerido</p>
+        </div>
+        <div>
+            <label>Fecha Comienzo</label>
+            <input type="date" name="startDate"
+                   ng-model="project.startDate"
+                   >
+        </div>
+        <div ng-messages="formulario.startDate.$error" ng-if="formulario.startDate.$touched">
+            <!--<div ng-messages-include="mensajes.html"></div>-->
+            <p ng-message="pattern">Fecha no valida</p>
+        </div>
+        <div>
+            <label>Fecha Fin</label>
+            <input type="date" name="endDate"
+                   ng-model="project.endDate"
+                   >
+        </div>
+        <div ng-messages="formulario.endDate.$error" ng-if="formulario.endDate.$touched">
+            <p ng-message="pattern" class="label label-danger">Fecha no valida</p>
+        </div>
+        <div>
+            <label>Etiquetas</label>
+            <input type="text" name="tags"
+                   ng-model="project.tags">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <a href="/" class="btn btn-default">Volver</a>
+
+    </form>
+</div>

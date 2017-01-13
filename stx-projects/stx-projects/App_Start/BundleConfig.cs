@@ -9,7 +9,17 @@ namespace stx_projects
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-route.min.js",
+                        "~/Scripts/angular-messages.min.js",
+                        "~/Scripts/toastr.min.js",
+                        "~/spa/app.js",
+                        "~/spa/services/apiService.js",
+                        "~/spa/services/notificationService.js",
+                        "~/spa/projects/projects.js",
+                        "~/spa/projects/add.js",
+                        "~/spa/projects/edit.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,7 +35,8 @@ namespace stx_projects
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/toastr.min.css"));
         }
     }
 }
