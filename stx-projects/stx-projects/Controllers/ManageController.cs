@@ -22,6 +22,7 @@ namespace stx_projects.Controllers
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
+			string p = "";
             UserManager = userManager;
             SignInManager = signInManager;
         }
